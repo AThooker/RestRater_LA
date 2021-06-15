@@ -34,11 +34,6 @@ namespace RestaurantRaterLA.Controllers
                 return View(restaurant);
             }
             _ctx.Restaurants.Add(restaurant);
-            if(_ctx.Restaurants.Add(restaurant).RestaurantID == 0)
-            {
-                //CHANGES MADE RIGHT HERE
-                return HttpNotFound();
-            }
             _ctx.SaveChanges();
             return RedirectToAction("Index");
         }
